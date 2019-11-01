@@ -69,11 +69,13 @@ origin  https://github.com/jvsguerra/aula-git.git (push)
 
 $ git push -u origin master
 
+$ git config credential.helper store // Salva credenciais do GitHub
 ```
 
 - [x] Você vai pegar um projeto já iniciado, para trabalhar com o time
 ```bash
-
+$ git clone https://github.com/maykbrito/instagram-profile-header.git
+$ cd instagram-profile-header/
 ```
 
 - [x] Você precisa resolver um conflito.
@@ -83,17 +85,21 @@ $ git push -u origin master
 
 - [x] Antes de enviar a resolução, precisamos atualizar o projeto local.
 ```bash
-
+$ git pull
 ```
 
 - [x] Você precisa voltar um arquivo para um determinado momento da linha do tempo.
 ```bash
-
+$ git log
+$ git status
+$ git checkout <id> -- <file>
 ```
 
 - [x] Você precisa recuperar algo deletado.
 ```bash
-
+$ git log
+$ git status
+$ git checkout <id> -- <file>
 ```
 
 * `git init` // inicia a linha do tempo
