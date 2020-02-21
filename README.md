@@ -116,7 +116,7 @@ $ git checkout <id> -- <file>
 * `git pull` // puxa do repositório remoto
 
 
-Git-lfs Tutorial
+Git-lfs installation
 --------
 
 To get started with Git LFS, the following commands can be used.
@@ -141,3 +141,18 @@ To get started with Git LFS, the following commands can be used.
         git add file.pdb
         git commit -m "Add disk image"
         git push
+ 
+
+Remove Git-lfs file
+--------
+ 
+You can delete the file in LFS but the process is not the same as compare to the Bitbucket Cloud. You can proceed with the following steps:
+
+1. On the local git lfs, remove the file from history using the filter-branch:
+
+    $ git filter-branch --force --tree-filter 'rm -f path/to/big_file.mpg' HEAD
+    $ git reflog expire --expire=now --all && git gc --prune=now --aggressive
+
+2. After you remove files from Git LFS, the Git LFS objects still exist on the remote storage and will continue to count toward your Git LFS storage quota.
+
+3. To remove Git LFS objects from a repository, delete and recreate the repository. When you delete a repository, any associated issue key and forks are also deleted.
