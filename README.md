@@ -150,8 +150,10 @@ You can delete the file in LFS but the process is not the same as compare to the
 
 1. On the local git lfs, remove the file from history using the filter-branch:
 
-    $ git filter-branch --force --tree-filter 'rm -f path/to/big_file.mpg' HEAD
-    $ git reflog expire --expire=now --all && git gc --prune=now --aggressive
+```bash
+git filter-branch --force --tree-filter 'rm -f path/to/big_file.mpg' HEAD
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+```
 
 2. After you remove files from Git LFS, the Git LFS objects still exist on the remote storage and will continue to count toward your Git LFS storage quota.
 
